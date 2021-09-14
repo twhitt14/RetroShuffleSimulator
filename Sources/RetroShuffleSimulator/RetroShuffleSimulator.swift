@@ -25,7 +25,7 @@ public struct RetroShuffleSimulator {
         }
         
         var reversedPiles: [[T]] = []
-        for pile in piles {
+        for pile in piles.reversed() {
             reversedPiles.append(pile.reversed())
         }
         
@@ -37,6 +37,10 @@ public struct RetroShuffleSimulator {
         let bottomHalf = deck.suffix(from: indexOfBottomHalfTopCard)
         
         return Array(bottomHalf + topHalf)
+    }
+    
+    public static func cutDeckRandomly<T>(_ deck: [T]) -> [T] {
+        cutDeck(deck, at: getRandomIndexToCutDeckOf(length: deck.count))
     }
     
     public static func getRandomIndexToCutDeckOf(length: Int) -> Int {
