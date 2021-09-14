@@ -53,10 +53,10 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "RetroShuffleSimulatorPerformanceTests">
+                  Identifier = "RetroShuffleSimulatorStatisticsTests">
                </Test>
                <Test
-                  Identifier = "RetroShuffleSimulatorStatisticsTests">
+                  Identifier = "RetroShuffleSimulatorTests">
                </Test>
             </SkippedTests>
          </TestableReference>

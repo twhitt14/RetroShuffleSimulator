@@ -56,7 +56,7 @@
                   Identifier = "RetroShuffleSimulatorPerformanceTests">
                </Test>
                <Test
-                  Identifier = "RetroShuffleSimulatorStatisticsTests">
+                  Identifier = "RetroShuffleSimulatorTests">
                </Test>
             </SkippedTests>
          </TestableReference>
