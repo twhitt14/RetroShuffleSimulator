@@ -86,8 +86,8 @@ final class RetroShuffleSimulatorTests: XCTestCase {
             
             let hand = cut.prefix(7)
             let manaCount = hand.filter { $0 == "MANA" }.count
-//                print(hand)
-//                print("⭐️ mana: \(manaCount)")
+//            print(hand)
+//            print("⭐️ mana: \(manaCount)")
 //            totalMana += manaCount
 //            manaResultArray.append(manaCount)
             switch manaCount {
