@@ -8,13 +8,6 @@
 import Foundation
 
 public struct RetroShuffleSimulator {
-    let numberOfCards: Int
-    let cardTypes: [String: Int]
-    
-    public init(numberOfCards: Int, cardTypes: [String : Int]) {
-        self.numberOfCards = numberOfCards
-        self.cardTypes = cardTypes
-    }
     
     public static func shuffleDeckByMakingPilesThenCombining<T>(_ deck: [T], numberOfPiles: Int) -> [T] {
         var piles: [[T]] = []

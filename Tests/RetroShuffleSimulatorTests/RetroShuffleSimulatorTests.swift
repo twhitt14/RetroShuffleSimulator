@@ -34,4 +34,24 @@
             let expected2 = [7,4,1,8,5,2,9,6,3]
             XCTAssertTrue(expected2 == splitDeck2, "Deck wasn't shuffled correctly. Expected \(expected2), got \(splitDeck2)")
         }
+        
+        func testRetroDeckInit() {
+            let cardValuesAndCounts = [("a", 5), ("b", 5), ("c", 10)]
+            let deck = RetroDeck(cardValuesAndCounts: cardValuesAndCounts)
+            let expected = ["a", "a", "a", "a", "a", "b", "b", "b", "b", "b", "c", "c", "c", "c", "c", "c", "c", "c", "c", "c"]
+            XCTAssertTrue(expected == deck.cards, "Deck wasn't shuffled correctly. Expected \(expected), got \(deck.cards)")
+        }
+        
+        func testRetroDeckShuffle() {
+            let cardValuesAndCounts = [("a", 5), ("b", 5), ("c", 10)]
+            let deck = RetroDeck(cardValuesAndCounts: cardValuesAndCounts)
+            
+            let shuffled1 = deck.shuffleDeckByMakingPilesThenCombining(numberOfPiles: 3)
+            let expected1 = ["c", "c", "c", "b", "b", "a", "a", "c", "c", "c", "c", "b", "a", "a", "c", "c", "c", "b", "b", "a"]
+            XCTAssertTrue(expected1 == shuffled1, "Deck wasn't shuffled correctly. Expected \(expected1), got \(shuffled1)")
+            
+            let shuffled2 = RetroShuffleSimulator.shuffleDeckByMakingPilesThenCombining(shuffled1, numberOfPiles: 4)
+            let expected2 = ["c", "a", "c", "b", "c", "b", "a", "c", "a", "c", "b", "c", "c", "a", "c", "a", "c", "b", "c", "b"]
+            XCTAssertTrue(expected2 == shuffled2, "Deck wasn't shuffled correctly. Expected \(expected2), got \(shuffled2)")
+        }
     }
